@@ -3,7 +3,7 @@
   "theme_color": "#1d1826",
   "name": "Encephalon",
   "short_name": "ENCPLN",
-  "display": "minimal-ui",
+  "display": "fullscreen",
   "start_url": "/",
   "icons": [
     {
