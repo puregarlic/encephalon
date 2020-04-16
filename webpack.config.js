@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const webpack = require('webpack');
 const path = require('path');
 const config = require('sapper/config/webpack.js');
@@ -36,7 +38,8 @@ module.exports = {
 			// dev && new webpack.HotModuleReplacementPlugin(),
 			new webpack.DefinePlugin({
 				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode)
+				'process.env.NODE_ENV': JSON.stringify(mode),
+				'process.env.MAGIC_PUBLIC_KEY': JSON.stringify(process.env.MAGIC_PUBLIC_KEY)
 			}),
 		].filter(Boolean),
 		devtool: dev && 'inline-source-map'
