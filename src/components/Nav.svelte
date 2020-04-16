@@ -1,5 +1,21 @@
 <script>
+  import Loading from "./Loading.svelte";
   import Button from "./Button.svelte";
+  import Login from "./Login.svelte";
+  import Shade from "./Shade.svelte";
+  import { slide } from "svelte/transition";
+  import { magic } from "../stores/magic";
+
+  let showLogin = false;
+
+  let checkAuthenticationStatus;
+  if (process.browser) {
+    checkAuthenticationStatus = magic.user.isLoggedIn();
+  }
+
+  function toggleLogin() {
+    showLogin = !showLogin;
+  }
 </script>
 
 <style>
@@ -8,6 +24,14 @@
     display: flex;
     justify-content: center;
     padding: calc(env(safe-area-inset-top, 2rem) + 2rem);
+  }
+
+  a {
+    background: none;
+  }
+
+  a:hover {
+    color: var(--theme-accent-pink);
   }
 
   @media screen and (min-width: 834px) {
@@ -19,14 +43,26 @@
       padding: 2rem;
     }
   }
-
-  .spacer {
-    width: 1rem;
-  }
 </style>
 
 <nav>
-  <Button invert outline>Sign Up</Button>
-  <div class="spacer" />
-  <Button>Sign In</Button>
+  {#await checkAuthenticationStatus then isLoggedIn}
+    {#if isLoggedIn}
+      <a href="/app">
+        <Button outline>Open App</Button>
+      </a>
+    {:else}
+      <Button outline on:click={toggleLogin}>Sign In</Button>
+    {/if}
+  {/await}
 </nav>
+
+{#if showLogin === true}
+  <Shade
+    visible={showLogin}
+    on:hide={e => {
+      showLogin = e.detail;
+    }}>
+    <Login />
+  </Shade>
+{/if}

@@ -1,6 +1,7 @@
 <script>
   import { slide } from "svelte/transition";
   import Button from "../components/Button.svelte";
+  import Nav from "../components/Nav.svelte";
 </script>
 
 <style>
@@ -68,68 +69,72 @@
   <title>Encephalon</title>
 </svelte:head>
 
-<section>
-  <h1>Encephalon</h1>
-  <h3>A place for your thoughts.</h3>
-</section>
+<Nav />
 
-<section class="inverted">
-  <h2 style="margin-bottom: 3rem;">
-    Hands juggle.
-    <em style="text-decoration: underline;">Brains don't.</em>
-  </h2>
+<main>
 
-  <p>
-    The
-    <b>greater</b>
-    number of running tasks, projects, and responsibilities you have, the
-    <b>harder</b>
-    it is to focus on the task at hand.
-  </p>
-  <p>
-    And when you can't focus on what's in front of you,
-    <b>you don't finish it</b>
-    .
-  </p>
-  <p style="margin-top: 3rem;">
-    <span>Work just keeps piling up.</span>
-  </p>
-</section>
+  <section>
+    <h1>Encephalon</h1>
+    <h3>A place for your thoughts.</h3>
+  </section>
 
-<section>
-  <h2>Here's how Encephalon helps.</h2>
+  <section class="inverted">
+    <h2 style="margin-bottom: 3rem;">
+      Hands juggle.
+      <em style="text-decoration: underline;">Brains don't.</em>
+    </h2>
 
-  <div>
-    <section class="features__item">
-      <h4>Empty your head</h4>
-      <p>
-        At any time,
-        <b>quickly save a note</b>
-        about anything that crosses your mind, and be confident that you can get
-        back to it later.
-      </p>
-    </section>
+    <p>
+      The
+      <b>greater</b>
+      number of running tasks, projects, and responsibilities you have, the
+      <b>harder</b>
+      it is to focus on the task at hand.
+    </p>
+    <p>
+      And when you can't focus on what's in front of you,
+      <b>you don't finish it</b>
+      .
+    </p>
+    <p style="margin-top: 3rem;">
+      <span>Work just keeps piling up.</span>
+    </p>
+  </section>
 
-    <section class="features__item">
-      <h4>Identify next steps</h4>
-      <p>
-        At a scheduled time each day, go through your notes and
-        <b>identify the next action step</b>
-        required to complete your project.
-      </p>
-    </section>
+  <section>
+    <h2>Here's how Encephalon helps.</h2>
 
-    <section class="features__item">
-      <h4>Dispatch with intention</h4>
-      <p>
-        Once you've identified your next action, choose whether to
-        <b>do it, delegate it, or defer it.</b>
-      </p>
-    </section>
-  </div>
-</section>
+    <div>
+      <section class="features__item">
+        <h4>Empty your head</h4>
+        <p>
+          At any time,
+          <b>quickly save a note</b>
+          about anything that crosses your mind, and be confident that you can
+          get back to it later.
+        </p>
+      </section>
 
-<!-- <section class="inverted">
+      <section class="features__item">
+        <h4>Identify next steps</h4>
+        <p>
+          At a scheduled time each day, go through your notes and
+          <b>identify the next action step</b>
+          required to complete your project.
+        </p>
+      </section>
+
+      <section class="features__item">
+        <h4>Dispatch with intention</h4>
+        <p>
+          Once you've identified your next action, choose whether to
+          <b>do it, delegate it, or defer it.</b>
+        </p>
+      </section>
+    </div>
+  </section>
+
+  <!-- <section class="inverted">
   <h2>Try it today.</h2>
   <form>
     <input type="email" required placeholder="your@brain.com" />
@@ -137,10 +142,12 @@
   </form>
 </section> -->
 
-<section class="inverted">
-  <h1>Coming soon.</h1>
-  <h3>Check back here for more details.</h3>
-</section>
+  <section class="inverted">
+    <h1>Coming soon.</h1>
+    <h3>Check back later for more details.</h3>
+  </section>
+
+</main>
 
 <footer class="inverted">
   <p>
